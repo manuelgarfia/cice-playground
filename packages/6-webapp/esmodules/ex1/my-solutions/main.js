@@ -1,13 +1,11 @@
-import { getTime } from './get-second-time'
+import { getTime } from './getTime.js'
+import { getName } from './getName.js'
+import { getTime as getTimeDate } from './get-second-time.js'
+import getConfirmedAlert from './confirm-alert.js'
+import { showFilesPrompt } from './input-using-prompt.js'
 
-export function getTime() {
-  console.log(getTime())
-}
-
-export function getName() {
-  alert('Manolo')
-}
-export function getConfirmedAlert() {
-  confirm('Congrats you are the 1M Th Visitor')
-  // window.alert("Congrats you are the 1M Th Visitor")
-}
+getTime()
+getTimeDate()
+getName()
+getConfirmedAlert()
+showFilesPrompt()
