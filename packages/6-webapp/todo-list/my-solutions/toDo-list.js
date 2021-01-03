@@ -5,17 +5,24 @@ export function addElementToDoList() {
 
   // We create the ul and li elements
   let ul = document.getElementById('toDoElement')
-  const newLineOnList = document.createElement('li')
-  newLineOnList.appendChild(document.createTextNode(toDoInputElementValue))
-  ul.appendChild(newLineOnList)
-  //Wa add a id and a value
+  const elementOnToDoList = document.createElement('li')
+  elementOnToDoList.appendChild(document.createTextNode(toDoInputElementValue))
+  const deleteLineOnList = document.createElement('span')
+  deleteLineOnList.innerText = '❌'
+  elementOnToDoList.appendChild(deleteLineOnList)
+  ul.appendChild(elementOnToDoList)
 
+  //Wa add a id and a value
   toDoInputElement.value = ''
 
-  newLineOnList.addEventListener('click', () =>{
-      newLineOnList.classList.toggle('completed')
+  function onComplete() {
+    elementOnToDoList.classList.toggle('completed')
+  }
 
+  elementOnToDoList.addEventListener('click', onComplete)
 
+  deleteLineOnList.addEventListener('click', () => {
+    elementOnToDoList.remove()
+    elementOnToDoList.removeEventListener('click',onComplete )
   })
 }
-
