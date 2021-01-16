@@ -19,6 +19,7 @@ export function addElementToDoList() {
     elementOnToDoList.classList.toggle('completed')
   }
 
+
   elementOnToDoList.addEventListener('click', onComplete)
 
   deleteLineOnList.addEventListener('click', () => {
